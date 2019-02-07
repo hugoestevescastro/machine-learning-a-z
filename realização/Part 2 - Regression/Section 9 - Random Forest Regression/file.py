@@ -15,11 +15,11 @@ y = dataset.iloc[:, 2].values
 
 # Fitting the regression model to the dataset
 from sklearn.ensemble import RandomForestRegressor
-regressor = RandomForestRegressor(n_estimators=10, random_state=0)
+regressor = RandomForestRegressor(n_estimators=500, random_state=0)
 regressor.fit(X, y)
 
 # Visualising the Regression Model results
-X_grid = np.arange(min(X), max(X), 0.1)
+X_grid = np.arange(min(X), max(X), 0.001)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color='red')
 plt.plot(X_grid, regressor.predict(X_grid), color='blue')
